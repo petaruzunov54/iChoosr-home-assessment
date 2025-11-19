@@ -6,7 +6,6 @@ namespace iChoosr_home_assessment.Services
     public class SpaceXService : ISpaceXService
     {
         private readonly HttpClient _httpClient;
-        private readonly ILogger<SpaceXService> _logger;
         private const string BaseUrl = "https://api.spacexdata.com/v3/payloads";
 
         public SpaceXService(HttpClient httpClient)
