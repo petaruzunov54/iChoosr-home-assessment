@@ -3,7 +3,11 @@ using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddHttpClient<ISpaceXService, SpaceXService>();
+builder.Services.AddMemoryCache();
+builder.Services.AddHttpClient<SpaceXService>();
+builder.Services.AddScoped<SpaceXService>();
+builder.Services.AddScoped<ISpaceXService, CachedSpaceXService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
