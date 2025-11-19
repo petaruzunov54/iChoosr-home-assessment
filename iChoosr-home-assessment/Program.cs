@@ -71,13 +71,6 @@ app.MapGet("/payloads", async (ISpaceXService spaceXService) =>
         );
     }
 });
-//.WithName("GetAllPayloads")
-//.WithDescription("Get all SpaceX payloads. Results are cached for 5 minutes for performance.")
-//.WithTags("Payloads")
-//.Produces<List<iChoosr_home_assessment.PayloadModels.Payload>>(StatusCodes.Status200OK);
-//.Produces(StatusCodes.Status401Unauthorized)
-//.Produces(StatusCodes.Status502BadGateway)
-//.Produces(StatusCodes.Status500InternalServerError);
 
 app.MapGet("/payloads/{id}", async (string id, ISpaceXService spaceXService) =>
 {
@@ -115,13 +108,5 @@ app.MapGet("/payloads/{id}", async (string id, ISpaceXService spaceXService) =>
         );
     }
 });
-//.WithName("GetPayloadById")
-//.WithDescription("Get a SpaceX payload by ID. Results are cached for 5 minutes for performance.")
-//.WithTags("Payloads")
-//.Produces<iChoosr_home_assessment.PayloadModels.Payload>(StatusCodes.Status200OK)
-//.Produces(StatusCodes.Status401Unauthorized)
-//.Produces(StatusCodes.Status502BadGateway)
-//.Produces(StatusCodes.Status500InternalServerError);
-
 
 app.Run();
